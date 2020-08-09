@@ -31,15 +31,20 @@ for dish in dishes:
 
 ### Linearithmic  | O(nlogn) ###
 print("\n### Linearithmic Function ###")
-print("Say me the Cuisines available")
+print("Say me the Cuisines available and I will choose any two cuisine from it")
+selected=0
 
 for cuisine in cuisines:
-	print(cuisine + ". Are you Interested sir? <yes/no>")
-	choice = input()
-	if (choice == "yes"):
-		print("The dishes in " + cuisine + " are")
-		for cuisineDish in dishes[cuisine]:
-			print(cuisineDish)
+	if(selected>1):
+		break
+	else:
+		print(cuisine + ". Are you Interested sir? <yes/no>")
+		choice = input()
+		if (choice == "yes" and selected < 2):
+			selected+=1
+			print("The dishes in " + cuisine + " are")
+			for cuisineDish in dishes[cuisine]:
+				print(cuisineDish)
 
 ### Quadratic | O(nlogn) ###
 print("\n### Quadratic Function ###")
